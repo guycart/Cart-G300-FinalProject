@@ -3,7 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 Aim Trainer/[Ll]ibrary/
-/[Tt]emp/
+Aim Trainer/[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
