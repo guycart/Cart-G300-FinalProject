@@ -5,20 +5,26 @@ using UnityEngine;
 public class TargetShooter : MonoBehaviour
 {
 
+    public float desiredTime;
+    public float timer;
+
     [SerializeField] Camera cam;
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(timer < desiredTime)
         {
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f,0.5f));
-            if(Physics.Raycast(ray, out RaycastHit hit))
+            if(Input.GetMouseButtonDown(0))
             {
-                Target target = hit.collider.gameObject.GetComponent<Target>();
-
-                if(target != null)
+                Ray ray = cam.ViewportPointToRay(new Vector3(0.5f,0.5f));
+                if(Physics.Raycast(ray, out RaycastHit hit))
                 {
-                    target.Hit();
+                    Target target = hit.collider.gameObject.GetComponent<Target>();
+
+                    if(target != null)
+                    {
+                        target.Hit();
+                    }
                 }
             }
         }
