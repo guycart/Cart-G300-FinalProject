@@ -7,6 +7,7 @@ public class TargetShooter : MonoBehaviour
 
     public float desiredTime;
     public float timer;
+    public AudioSource audio;
 
     [SerializeField] Camera cam;
 
